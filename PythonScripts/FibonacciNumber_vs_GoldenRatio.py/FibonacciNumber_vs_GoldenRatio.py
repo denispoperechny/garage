@@ -1,12 +1,12 @@
 import csv
-array=[1,1]
+# Create Fibonacci numbers list
+fNumbers=[1,1]
 for i in range(2, 100):
-    a=array[i-2]
-    b=array[i-1]
-    array.append(a+b)
+    fNumbers.append(fNumbers[i-2]+fNumbers[i-1])
+# Write to file with Golder ratio values
 with open('result.csv', 'wb') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    spamwriter.writerow(['index', 'fibonacci', 'golden ratio'])
+    fgWriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    fgWriter.writerow(['index', 'fibonacci', 'golden ratio'])
     for i in range(1, 100):
-        spamwriter.writerow([i-1] + [array[i-1]] + [float(array[i-1])/float(array[i])])
+        fgWriter.writerow([i-1] + [fNumbers[i-1]] + [float(fNumbers[i-1])/float(fNumbers[i])])
 print "Finished"
