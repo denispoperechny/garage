@@ -1,0 +1,8 @@
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\bin\Debug\Console.exe.config
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\bin\Debug\Console.exe
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\bin\Debug\Console.pdb
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\bin\Debug\ConsoleParametersProcessor.dll
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\bin\Debug\ConsoleParametersProcessor.pdb
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\obj\Debug\Console.exe
+D:\Documents\Denis\.net Workspace\ConsoleParametersProcessor\Console\obj\Debug\Console.pdb
