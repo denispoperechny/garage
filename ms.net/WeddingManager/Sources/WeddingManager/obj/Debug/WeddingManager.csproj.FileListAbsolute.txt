@@ -1,1 +1,15 @@
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\bin\Debug\WeddingManager.exe.config
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\bin\Debug\WeddingManager.exe
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\bin\Debug\WeddingManager.pdb
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.csprojResolveAssemblyReference.cache
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\MainWindow.baml
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\MainWindow.g.cs
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\App.g.cs
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager_MarkupCompile.cache
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.g.resources
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.Properties.Resources.resources
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.csproj.GenerateResource.Cache
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.exe
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.pdb
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager_MarkupCompile.lref

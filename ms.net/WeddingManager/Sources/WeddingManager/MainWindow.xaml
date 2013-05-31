@@ -1,8 +1,18 @@
 ﻿<Window x:Class="WeddingManager.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:vms="clr-namespace:WeddingManager.ViewModels"
+        Title="Wedding Manager" Height="350" Width="525">
+    <Window.DataContext>
+        <vms:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
-        
+        <TabControl ItemsSource="{Binding Path=Tabs}">
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="TabItem">
+                    <Setter Property="Header" Value="{Binding Title}"/>
+                </Style>
+            </TabControl.ItemContainerStyle>
+        </TabControl>
     </Grid>
 </Window>
