@@ -18,3 +18,7 @@ D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debu
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainLayout.g.cs
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\VisitorsView.g.cs
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Dictionaries\ResourceDictionary.baml
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\CounterpartiesView.baml
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\ToastsView.baml
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\CounterpartiesView.g.cs
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\ToastsView.g.cs

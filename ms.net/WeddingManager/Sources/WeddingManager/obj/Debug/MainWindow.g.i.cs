@@ -30,7 +30,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
 using WeddingManager.ViewModels;
+using WeddingManager.ViewModels.MainTabs;
 using WeddingManager.Views;
+using WeddingManager.Views.MainTabs;
 
 
 namespace WeddingManager {
