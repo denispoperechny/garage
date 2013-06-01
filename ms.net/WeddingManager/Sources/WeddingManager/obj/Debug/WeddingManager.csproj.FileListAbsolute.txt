@@ -13,3 +13,8 @@ D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debu
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager.pdb
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\WeddingManager_MarkupCompile.lref
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainLayout.baml
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\VisitorsView.baml
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainLayout.g.cs
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Views\MainTabs\VisitorsView.g.cs
+D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\obj\Debug\Dictionaries\ResourceDictionary.baml

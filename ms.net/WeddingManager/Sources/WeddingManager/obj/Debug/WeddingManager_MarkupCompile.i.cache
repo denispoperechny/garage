@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Workspace\garage@github\ms.net\WeddingManager\Sources\WeddingManager\App.xaml
-21434945907
+4-417583786
 
-161617668824
+17620555536
 12-1401562060
-MainWindow.xaml;Views\MainTabs\VisitorsView.xaml;
+Dictionaries\ResourceDictionary.xaml;MainWindow.xaml;Views\MainLayout.xaml;Views\MainTabs\VisitorsView.xaml;
 
 False
 
