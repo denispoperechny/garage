@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingManager", "WeddingManager.csproj", "{C2C4F7E0-CECF-401C-AD9D-7AAF4B9A04DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingManager", "WeddingManager\WeddingManager.csproj", "{C2C4F7E0-CECF-401C-AD9D-7AAF4B9A04DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{F03796D5-EE4E-48AB-9FB3-2FEFD3A464E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F03796D5-EE4E-48AB-9FB3-2FEFD3A464E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
