@@ -1,0 +1,2 @@
+Program 'WeddingManager' is created for personal use only.
+Author is not responsible for any use cases and entered information into program.
