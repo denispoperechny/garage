@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingManager", "WeddingMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F03796D5-EE4E-48AB-9FB3-2FEFD3A464E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSource", "DataSource\DataSource.csproj", "{27506C10-802E-4D58-9B88-DFD4613E9ED6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{F03796D5-EE4E-48AB-9FB3-2FEFD3A464E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F03796D5-EE4E-48AB-9FB3-2FEFD3A464E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F03796D5-EE4E-48AB-9FB3-2FEFD3A464E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27506C10-802E-4D58-9B88-DFD4613E9ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27506C10-802E-4D58-9B88-DFD4613E9ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27506C10-802E-4D58-9B88-DFD4613E9ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27506C10-802E-4D58-9B88-DFD4613E9ED6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,6 +15,9 @@ namespace WeddingManager.ViewModels
         public MainLayoutViewModel()
         {
             _tabs = new MainTabViewModel[] { new VisitorsViewModel(), new ToastsViewModel(), new CounterpartiesViewModel() };
+
+            bool checkDb = DataSource.SqlCE.Connection.TestConnection();
+
         }
 
         public string Test

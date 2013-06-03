@@ -164,6 +164,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataSource\DataSource.csproj">
+      <Project>{27506c10-802e-4d58-9b88-dfd4613e9ed6}</Project>
+      <Name>DataSource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{f03796d5-ee4e-48ab-9fb3-2fefd3a464e9}</Project>
       <Name>Infrastructure</Name>
