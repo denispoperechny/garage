@@ -103,13 +103,14 @@ SELECT 9, 'Decorator'
 CREATE TABLE Counterparty
 (
 Id UNIQUEIDENTIFIER,
-CounterpartyRoleId UNIQUEIDENTIFIER NULL,
+CounterpartyRoleId INT NULL,
 CounterpartyRoleDescription nvarchar(128) NULL,
 Name nvarchar(256) NOT NULL,
 ContactPerson nvarchar(256) NULL,
 PhoneNumber nvarchar (32) NULL,
 Email nvarchar(64) NULL,
-PRIMARY KEY (Id)
+PRIMARY KEY (Id),
+foreign key ( CounterpartyRoleId ) references CounterpartyRoles (Id)
 );
 
 CREATE TABLE CounterpartyToWeddingProject

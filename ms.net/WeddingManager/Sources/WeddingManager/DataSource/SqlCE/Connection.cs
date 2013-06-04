@@ -34,22 +34,22 @@ namespace DataSource.SqlCE
             if (_connection != null && _connection.State == ConnectionState.Open)
                 return _connection;
 
-            var connection = new SqlCeConnection(_connectionString);
+            _connection = new SqlCeConnection(_connectionString);
 
-            try
-            {
-                connection.Open();
-            }
-            catch (SqlCeInvalidDatabaseFormatException e)
-            {
-                //TODO: Use messages handling system
-                Trace.WriteLine("Warning: SqlCeInvalidDatabaseFormatException was occured");
-                new SqlCeEngine(_connectionString).Upgrade();
-                Trace.WriteLine("Warning: Data base version upgraded");
-                connection.Open();
-            }
+            //try
+            //{
+                _connection.Open();
+            //}
+            //catch (SqlCeInvalidDatabaseFormatException)
+            //{
+            //    //TODO: Use messages handling system
+            //    Trace.WriteLine("Warning: SqlCeInvalidDatabaseFormatException was occured");
+            //    new SqlCeEngine(_connectionString).Upgrade();
+            //    Trace.WriteLine("Warning: Data base version upgraded");
+            //    _connection.Open();
+            //}
 
-            return connection;
+            return _connection;
         }
 
     }

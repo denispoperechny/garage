@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WeddingManagerDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="WeddingManagerDataModelStoreContainer">
+          <EntitySet Name="Counterparty" EntityType="WeddingManagerDataModel.Store.Counterparty" store:Type="Tables" />
+          <EntitySet Name="CounterpartyRoles" EntityType="WeddingManagerDataModel.Store.CounterpartyRoles" store:Type="Tables" />
+          <EntitySet Name="CounterpartyToWeddingProject" EntityType="WeddingManagerDataModel.Store.CounterpartyToWeddingProject" store:Type="Tables" />
+          <EntitySet Name="Toast" EntityType="WeddingManagerDataModel.Store.Toast" store:Type="Tables" />
+          <EntitySet Name="ToastToVisitor" EntityType="WeddingManagerDataModel.Store.ToastToVisitor" store:Type="Tables" />
+          <EntitySet Name="Visitor" EntityType="WeddingManagerDataModel.Store.Visitor" store:Type="Tables" />
+          <EntitySet Name="VisitorBelongSides" EntityType="WeddingManagerDataModel.Store.VisitorBelongSides" store:Type="Tables" />
+          <EntitySet Name="VisitorRoles" EntityType="WeddingManagerDataModel.Store.VisitorRoles" store:Type="Tables" />
+          <EntitySet Name="WeddingProject" EntityType="WeddingManagerDataModel.Store.WeddingProject" store:Type="Tables" />
+          <AssociationSet Name="FK__Counterparty__00000000000000CC" Association="WeddingManagerDataModel.Store.FK__Counterparty__00000000000000CC">
+            <End Role="CounterpartyRoles" EntitySet="CounterpartyRoles" />
+            <End Role="Counterparty" EntitySet="Counterparty" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CounterpartyToWeddingProject__00000000000000E0" Association="WeddingManagerDataModel.Store.FK__CounterpartyToWeddingProject__00000000000000E0">
+            <End Role="Counterparty" EntitySet="Counterparty" />
+            <End Role="CounterpartyToWeddingProject" EntitySet="CounterpartyToWeddingProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CounterpartyToWeddingProject__00000000000000E4" Association="WeddingManagerDataModel.Store.FK__CounterpartyToWeddingProject__00000000000000E4">
+            <End Role="WeddingProject" EntitySet="WeddingProject" />
+            <End Role="CounterpartyToWeddingProject" EntitySet="CounterpartyToWeddingProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Toast__000000000000001D" Association="WeddingManagerDataModel.Store.FK__Toast__000000000000001D">
+            <End Role="WeddingProject" EntitySet="WeddingProject" />
+            <End Role="Toast" EntitySet="Toast" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ToastToVisitor__0000000000000063" Association="WeddingManagerDataModel.Store.FK__ToastToVisitor__0000000000000063">
+            <End Role="Toast" EntitySet="Toast" />
+            <End Role="ToastToVisitor" EntitySet="ToastToVisitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ToastToVisitor__0000000000000067" Association="WeddingManagerDataModel.Store.FK__ToastToVisitor__0000000000000067">
+            <End Role="Visitor" EntitySet="Visitor" />
+            <End Role="ToastToVisitor" EntitySet="ToastToVisitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Visitor__000000000000004D" Association="WeddingManagerDataModel.Store.FK__Visitor__000000000000004D">
+            <End Role="VisitorBelongSides" EntitySet="VisitorBelongSides" />
+            <End Role="Visitor" EntitySet="Visitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Visitor__0000000000000051" Association="WeddingManagerDataModel.Store.FK__Visitor__0000000000000051">
+            <End Role="VisitorRoles" EntitySet="VisitorRoles" />
+            <End Role="Visitor" EntitySet="Visitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Visitor__0000000000000055" Association="WeddingManagerDataModel.Store.FK__Visitor__0000000000000055">
+            <End Role="WeddingProject" EntitySet="WeddingProject" />
+            <End Role="Visitor" EntitySet="Visitor" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Counterparty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CounterpartyRoleId" Type="int" />
+          <Property Name="CounterpartyRoleDescription" Type="nvarchar" MaxLength="128" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="256" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="32" />
+          <Property Name="Email" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="CounterpartyRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CounterpartyToWeddingProject">
+          <Key>
+            <PropertyRef Name="CounterpartyId" />
+            <PropertyRef Name="WeddingProjectId" />
+          </Key>
+          <Property Name="CounterpartyId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WeddingProjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="2048" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="AlreadyPayed" Type="money" />
+        </EntityType>
+        <EntityType Name="Toast">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WeddingProjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IndexNumber" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="ToastToVisitor">
+          <Key>
+            <PropertyRef Name="ToastId" />
+            <PropertyRef Name="VisitorId" />
+          </Key>
+          <Property Name="ToastId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="VisitorId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WeddingProjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="128" />
+          <Property Name="VisitorBelongSideId" Type="int" />
+          <Property Name="VisitorRoleId" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="32" />
+          <Property Name="Email" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="VisitorBelongSides">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="VisitorRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="WeddingProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PlannedDate" Type="datetime" />
+          <Property Name="Venue" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <Association Name="FK__Counterparty__00000000000000CC">
+          <End Role="CounterpartyRoles" Type="WeddingManagerDataModel.Store.CounterpartyRoles" Multiplicity="0..1" />
+          <End Role="Counterparty" Type="WeddingManagerDataModel.Store.Counterparty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CounterpartyRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Counterparty">
+              <PropertyRef Name="CounterpartyRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CounterpartyToWeddingProject__00000000000000E0">
+          <End Role="Counterparty" Type="WeddingManagerDataModel.Store.Counterparty" Multiplicity="1" />
+          <End Role="CounterpartyToWeddingProject" Type="WeddingManagerDataModel.Store.CounterpartyToWeddingProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Counterparty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CounterpartyToWeddingProject">
+              <PropertyRef Name="CounterpartyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CounterpartyToWeddingProject__00000000000000E4">
+          <End Role="WeddingProject" Type="WeddingManagerDataModel.Store.WeddingProject" Multiplicity="1" />
+          <End Role="CounterpartyToWeddingProject" Type="WeddingManagerDataModel.Store.CounterpartyToWeddingProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeddingProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CounterpartyToWeddingProject">
+              <PropertyRef Name="WeddingProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Toast__000000000000001D">
+          <End Role="WeddingProject" Type="WeddingManagerDataModel.Store.WeddingProject" Multiplicity="1" />
+          <End Role="Toast" Type="WeddingManagerDataModel.Store.Toast" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeddingProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Toast">
+              <PropertyRef Name="WeddingProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ToastToVisitor__0000000000000063">
+          <End Role="Toast" Type="WeddingManagerDataModel.Store.Toast" Multiplicity="1" />
+          <End Role="ToastToVisitor" Type="WeddingManagerDataModel.Store.ToastToVisitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toast">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ToastToVisitor">
+              <PropertyRef Name="ToastId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ToastToVisitor__0000000000000067">
+          <End Role="Visitor" Type="WeddingManagerDataModel.Store.Visitor" Multiplicity="1" />
+          <End Role="ToastToVisitor" Type="WeddingManagerDataModel.Store.ToastToVisitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visitor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ToastToVisitor">
+              <PropertyRef Name="VisitorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Visitor__000000000000004D">
+          <End Role="VisitorBelongSides" Type="WeddingManagerDataModel.Store.VisitorBelongSides" Multiplicity="0..1" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Store.Visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorBelongSides">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Visitor">
+              <PropertyRef Name="VisitorBelongSideId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Visitor__0000000000000051">
+          <End Role="VisitorRoles" Type="WeddingManagerDataModel.Store.VisitorRoles" Multiplicity="0..1" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Store.Visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Visitor">
+              <PropertyRef Name="VisitorRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Visitor__0000000000000055">
+          <End Role="WeddingProject" Type="WeddingManagerDataModel.Store.WeddingProject" Multiplicity="1" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Store.Visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeddingProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Visitor">
+              <PropertyRef Name="WeddingProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WeddingManagerDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WeddingManagerDataContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Counterparties" EntityType="WeddingManagerDataModel.Counterparty" />
+          <EntitySet Name="CounterpartyRoles" EntityType="WeddingManagerDataModel.CounterpartyRole" />
+          <EntitySet Name="CounterpartyToWeddingProjects" EntityType="WeddingManagerDataModel.CounterpartyToWeddingProject" />
+          <EntitySet Name="Toasts" EntityType="WeddingManagerDataModel.Toast" />
+          <EntitySet Name="Visitors" EntityType="WeddingManagerDataModel.Visitor" />
+          <EntitySet Name="VisitorBelongSides" EntityType="WeddingManagerDataModel.VisitorBelongSide" />
+          <EntitySet Name="VisitorRoles" EntityType="WeddingManagerDataModel.VisitorRole" />
+          <EntitySet Name="WeddingProjects" EntityType="WeddingManagerDataModel.WeddingProject" />
+          <AssociationSet Name="FK__Counterparty__00000000000000CC" Association="WeddingManagerDataModel.FK__Counterparty__00000000000000CC">
+            <End Role="CounterpartyRoles" EntitySet="CounterpartyRoles" />
+            <End Role="Counterparty" EntitySet="Counterparties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CounterpartyToWeddingProject__00000000000000E0" Association="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E0">
+            <End Role="Counterparty" EntitySet="Counterparties" />
+            <End Role="CounterpartyToWeddingProject" EntitySet="CounterpartyToWeddingProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CounterpartyToWeddingProject__00000000000000E4" Association="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E4">
+            <End Role="WeddingProject" EntitySet="WeddingProjects" />
+            <End Role="CounterpartyToWeddingProject" EntitySet="CounterpartyToWeddingProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Toast__000000000000001D" Association="WeddingManagerDataModel.FK__Toast__000000000000001D">
+            <End Role="WeddingProject" EntitySet="WeddingProjects" />
+            <End Role="Toast" EntitySet="Toasts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Visitor__000000000000004D" Association="WeddingManagerDataModel.FK__Visitor__000000000000004D">
+            <End Role="VisitorBelongSides" EntitySet="VisitorBelongSides" />
+            <End Role="Visitor" EntitySet="Visitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Visitor__0000000000000051" Association="WeddingManagerDataModel.FK__Visitor__0000000000000051">
+            <End Role="VisitorRoles" EntitySet="VisitorRoles" />
+            <End Role="Visitor" EntitySet="Visitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Visitor__0000000000000055" Association="WeddingManagerDataModel.FK__Visitor__0000000000000055">
+            <End Role="WeddingProject" EntitySet="WeddingProjects" />
+            <End Role="Visitor" EntitySet="Visitors" />
+          </AssociationSet>
+          <AssociationSet Name="ToastToVisitor" Association="WeddingManagerDataModel.ToastToVisitor">
+            <End Role="Toast" EntitySet="Toasts" />
+            <End Role="Visitor" EntitySet="Visitors" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Counterparty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CounterpartyRoleId" Type="Int32" />
+          <Property Name="CounterpartyRoleDescription" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CounterpartyRole" Relationship="WeddingManagerDataModel.FK__Counterparty__00000000000000CC" FromRole="Counterparty" ToRole="CounterpartyRoles" />
+          <NavigationProperty Name="CounterpartyToWeddingProjects" Relationship="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E0" FromRole="Counterparty" ToRole="CounterpartyToWeddingProject" />
+        </EntityType>
+        <EntityType Name="CounterpartyRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Counterparties" Relationship="WeddingManagerDataModel.FK__Counterparty__00000000000000CC" FromRole="CounterpartyRoles" ToRole="Counterparty" />
+        </EntityType>
+        <EntityType Name="CounterpartyToWeddingProject">
+          <Key>
+            <PropertyRef Name="CounterpartyId" />
+            <PropertyRef Name="WeddingProjectId" />
+          </Key>
+          <Property Name="CounterpartyId" Type="Guid" Nullable="false" />
+          <Property Name="WeddingProjectId" Type="Guid" Nullable="false" />
+          <Property Name="Summary" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AlreadyPayed" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Counterparty" Relationship="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E0" FromRole="CounterpartyToWeddingProject" ToRole="Counterparty" />
+          <NavigationProperty Name="WeddingProject" Relationship="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E4" FromRole="CounterpartyToWeddingProject" ToRole="WeddingProject" />
+        </EntityType>
+        <EntityType Name="Toast">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="WeddingProjectId" Type="Guid" Nullable="false" />
+          <Property Name="IndexNumber" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="WeddingProject" Relationship="WeddingManagerDataModel.FK__Toast__000000000000001D" FromRole="Toast" ToRole="WeddingProject" />
+          <NavigationProperty Name="Visitors" Relationship="WeddingManagerDataModel.ToastToVisitor" FromRole="Toast" ToRole="Visitor" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="WeddingProjectId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="FullName" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="VisitorBelongSideId" Type="Int32" />
+          <Property Name="VisitorRoleId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="VisitorBelongSide" Relationship="WeddingManagerDataModel.FK__Visitor__000000000000004D" FromRole="Visitor" ToRole="VisitorBelongSides" />
+          <NavigationProperty Name="VisitorRole" Relationship="WeddingManagerDataModel.FK__Visitor__0000000000000051" FromRole="Visitor" ToRole="VisitorRoles" />
+          <NavigationProperty Name="WeddingProject" Relationship="WeddingManagerDataModel.FK__Visitor__0000000000000055" FromRole="Visitor" ToRole="WeddingProject" />
+          <NavigationProperty Name="Toasts" Relationship="WeddingManagerDataModel.ToastToVisitor" FromRole="Visitor" ToRole="Toast" />
+        </EntityType>
+        <EntityType Name="VisitorBelongSide">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Visitors" Relationship="WeddingManagerDataModel.FK__Visitor__000000000000004D" FromRole="VisitorBelongSides" ToRole="Visitor" />
+        </EntityType>
+        <EntityType Name="VisitorRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Visitors" Relationship="WeddingManagerDataModel.FK__Visitor__0000000000000051" FromRole="VisitorRoles" ToRole="Visitor" />
+        </EntityType>
+        <EntityType Name="WeddingProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PlannedDate" Type="DateTime" Precision="3" />
+          <Property Name="Venue" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CounterpartyToWeddingProjects" Relationship="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E4" FromRole="WeddingProject" ToRole="CounterpartyToWeddingProject" />
+          <NavigationProperty Name="Toasts" Relationship="WeddingManagerDataModel.FK__Toast__000000000000001D" FromRole="WeddingProject" ToRole="Toast" />
+          <NavigationProperty Name="Visitors" Relationship="WeddingManagerDataModel.FK__Visitor__0000000000000055" FromRole="WeddingProject" ToRole="Visitor" />
+        </EntityType>
+        <Association Name="FK__Counterparty__00000000000000CC">
+          <End Role="CounterpartyRoles" Type="WeddingManagerDataModel.CounterpartyRole" Multiplicity="0..1" />
+          <End Role="Counterparty" Type="WeddingManagerDataModel.Counterparty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CounterpartyRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Counterparty">
+              <PropertyRef Name="CounterpartyRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CounterpartyToWeddingProject__00000000000000E0">
+          <End Role="Counterparty" Type="WeddingManagerDataModel.Counterparty" Multiplicity="1" />
+          <End Role="CounterpartyToWeddingProject" Type="WeddingManagerDataModel.CounterpartyToWeddingProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Counterparty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CounterpartyToWeddingProject">
+              <PropertyRef Name="CounterpartyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CounterpartyToWeddingProject__00000000000000E4">
+          <End Role="WeddingProject" Type="WeddingManagerDataModel.WeddingProject" Multiplicity="1" />
+          <End Role="CounterpartyToWeddingProject" Type="WeddingManagerDataModel.CounterpartyToWeddingProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeddingProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CounterpartyToWeddingProject">
+              <PropertyRef Name="WeddingProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Toast__000000000000001D">
+          <End Role="WeddingProject" Type="WeddingManagerDataModel.WeddingProject" Multiplicity="1" />
+          <End Role="Toast" Type="WeddingManagerDataModel.Toast" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeddingProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Toast">
+              <PropertyRef Name="WeddingProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Visitor__000000000000004D">
+          <End Role="VisitorBelongSides" Type="WeddingManagerDataModel.VisitorBelongSide" Multiplicity="0..1" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorBelongSides">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Visitor">
+              <PropertyRef Name="VisitorBelongSideId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Visitor__0000000000000051">
+          <End Role="VisitorRoles" Type="WeddingManagerDataModel.VisitorRole" Multiplicity="0..1" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Visitor">
+              <PropertyRef Name="VisitorRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Visitor__0000000000000055">
+          <End Role="WeddingProject" Type="WeddingManagerDataModel.WeddingProject" Multiplicity="1" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeddingProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Visitor">
+              <PropertyRef Name="WeddingProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ToastToVisitor">
+          <End Role="Toast" Type="WeddingManagerDataModel.Toast" Multiplicity="*" />
+          <End Role="Visitor" Type="WeddingManagerDataModel.Visitor" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WeddingManagerDataModelStoreContainer" CdmEntityContainer="WeddingManagerDataContext">
+          <EntitySetMapping Name="Counterparties">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.Counterparty">
+              <MappingFragment StoreEntitySet="Counterparty">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CounterpartyRoleId" ColumnName="CounterpartyRoleId" />
+                <ScalarProperty Name="CounterpartyRoleDescription" ColumnName="CounterpartyRoleDescription" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CounterpartyRoles">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.CounterpartyRole">
+              <MappingFragment StoreEntitySet="CounterpartyRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CounterpartyToWeddingProjects">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.CounterpartyToWeddingProject">
+              <MappingFragment StoreEntitySet="CounterpartyToWeddingProject">
+                <ScalarProperty Name="CounterpartyId" ColumnName="CounterpartyId" />
+                <ScalarProperty Name="WeddingProjectId" ColumnName="WeddingProjectId" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="AlreadyPayed" ColumnName="AlreadyPayed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Toasts">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.Toast">
+              <MappingFragment StoreEntitySet="Toast">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="WeddingProjectId" ColumnName="WeddingProjectId" />
+                <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitors">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.Visitor">
+              <MappingFragment StoreEntitySet="Visitor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="WeddingProjectId" ColumnName="WeddingProjectId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="VisitorBelongSideId" ColumnName="VisitorBelongSideId" />
+                <ScalarProperty Name="VisitorRoleId" ColumnName="VisitorRoleId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisitorBelongSides">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.VisitorBelongSide">
+              <MappingFragment StoreEntitySet="VisitorBelongSides">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisitorRoles">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.VisitorRole">
+              <MappingFragment StoreEntitySet="VisitorRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeddingProjects">
+            <EntityTypeMapping TypeName="WeddingManagerDataModel.WeddingProject">
+              <MappingFragment StoreEntitySet="WeddingProject">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PlannedDate" ColumnName="PlannedDate" />
+                <ScalarProperty Name="Venue" ColumnName="Venue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ToastToVisitor" TypeName="WeddingManagerDataModel.ToastToVisitor" StoreEntitySet="ToastToVisitor">
+            <EndProperty Name="Toast">
+              <ScalarProperty Name="Id" ColumnName="ToastId" />
+            </EndProperty>
+            <EndProperty Name="Visitor">
+              <ScalarProperty Name="Id" ColumnName="VisitorId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

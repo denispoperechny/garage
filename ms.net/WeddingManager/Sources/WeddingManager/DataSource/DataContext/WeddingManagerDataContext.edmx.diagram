@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea369e9862614a2c918e4d4e61fbbecf" Name="Diagram1">
+        <EntityTypeShape EntityType="WeddingManagerDataModel.Counterparty" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.CounterpartyRole" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.CounterpartyToWeddingProject" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.Toast" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.Visitor" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.VisitorBelongSide" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.VisitorRole" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeddingManagerDataModel.WeddingProject" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__Counterparty__00000000000000CC" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E0" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__CounterpartyToWeddingProject__00000000000000E4" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__Toast__000000000000001D" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__Visitor__000000000000004D" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__Visitor__0000000000000051" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.FK__Visitor__0000000000000055" ManuallyRouted="false" />
+        <AssociationConnector Association="WeddingManagerDataModel.ToastToVisitor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
