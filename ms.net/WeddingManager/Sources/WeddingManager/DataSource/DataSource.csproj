@@ -101,7 +101,7 @@
       <DependentUpon>WeddingManagerDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlCE\Connection.cs" />
+    <Compile Include="SqlCE\ConnectionStringManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlCE\WeddingManagerData.sdf">

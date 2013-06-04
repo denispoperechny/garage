@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataSource.DataContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,12 @@ namespace WeddingManager.ViewModels
 
         public MainLayoutViewModel()
         {
+            //TODO: Here is test data. To be removed
+            
             _tabs = new MainTabViewModel[] { new VisitorsViewModel(), new ToastsViewModel(), new CounterpartiesViewModel() };
+            //bool checkDb = DataSource.SqlCE.Connection.TestConnection();
+            var testDb = new WeddingManagerDataContext();
 
-            bool checkDb = DataSource.SqlCE.Connection.TestConnection();
 
         }
 
