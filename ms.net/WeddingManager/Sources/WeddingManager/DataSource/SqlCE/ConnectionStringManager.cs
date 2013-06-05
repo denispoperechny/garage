@@ -21,29 +21,5 @@ namespace DataSource.SqlCE
             return _connectionString;
         }
 
-        //public static bool TestConnection()
-        //{
-        //    try
-        //    {
-        //        GetConnection();
-        //        return true;
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //public static IDbConnection GetConnection()
-        //{
-        //    if (_connection != null && _connection.State == ConnectionState.Open)
-        //        return _connection;
-
-        //    _connection = new SqlCeConnection(_connectionString);
-        //    _connection.Open();
-            
-        //    return _connection;
-        //}
-
     }
 }

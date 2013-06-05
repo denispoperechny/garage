@@ -7,7 +7,7 @@ using WeddingManager.MVVM;
 
 namespace WeddingManager.ViewModels
 {
-    public abstract class MainTabViewModel : ViewModelBase
+    public abstract class MainTabViewModel : WeddingManagerViewModelBase
     {
         public abstract string Title { get; }
     }

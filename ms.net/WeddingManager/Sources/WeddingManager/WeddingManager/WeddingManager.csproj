@@ -77,6 +77,7 @@
     <Compile Include="ViewModels\MainTabViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MainTabs\VisitorsViewModel.cs" />
+    <Compile Include="ViewModels\WeddingManagerViewModelBase.cs" />
     <Compile Include="Views\MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
     </Compile>

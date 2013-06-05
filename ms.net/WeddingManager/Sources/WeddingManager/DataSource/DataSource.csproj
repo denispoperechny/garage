@@ -70,6 +70,7 @@
     <Compile Include="DataContext\CounterpartyToWeddingProject.cs">
       <DependentUpon>WeddingManagerDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataContext\Partials\WeddingManagerDataContext.cs" />
     <Compile Include="DataContext\Toast.cs">
       <DependentUpon>WeddingManagerDataContext.tt</DependentUpon>
     </Compile>
@@ -105,7 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlCE\WeddingManagerData.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
