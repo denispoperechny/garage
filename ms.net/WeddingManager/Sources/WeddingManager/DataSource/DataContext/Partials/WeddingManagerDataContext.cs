@@ -10,17 +10,19 @@ namespace DataSource.DataContext
     public partial class WeddingManagerDataContext : DbContext
     {
         private static WeddingManagerDataContext _instance;
+        private static readonly object _lockObject = new object();
 
         public static WeddingManagerDataContext SafeInstance
         {
             get
             {
-                //TODO: Make thread safe !!
-                
-                if (_instance == null)
+                lock (_lockObject)
                 {
-                    _instance = new WeddingManagerDataContext();
-                    AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
+                    if (_instance == null)
+                    {
+                        _instance = new WeddingManagerDataContext();
+                        AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
+                    }
                 }
 
                 return _instance;

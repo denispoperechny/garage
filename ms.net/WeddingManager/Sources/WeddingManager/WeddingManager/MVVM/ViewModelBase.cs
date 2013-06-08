@@ -9,10 +9,8 @@ namespace WeddingManager.MVVM
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
-
         protected void OnPropertyChanged(string propertyName)
         {
-            //TODO: Make thread-safe
             PropertyChangedEventHandler handler = PropertyChanged;
 
             if (handler != null)

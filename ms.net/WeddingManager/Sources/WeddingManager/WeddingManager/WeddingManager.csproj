@@ -180,6 +180,10 @@
       <Project>{f03796d5-ee4e-48ab-9fb3-2fefd3a464e9}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VisualControls\VisualControls.csproj">
+      <Project>{6a8d5371-3295-43f2-80f3-dcac80ca54ee}</Project>
+      <Name>VisualControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
