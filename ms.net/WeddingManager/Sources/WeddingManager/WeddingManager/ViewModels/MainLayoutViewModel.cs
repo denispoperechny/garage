@@ -20,17 +20,7 @@ namespace WeddingManager.ViewModels
 
             //TODO: Here is test data. To be removed
             var dd = DataContext.CounterpartyRoles.ToList();
-            try
-            {
-                var modal = new ModalDialog(null, ModalButton.Ok|ModalButton.Cancel);
 
-                modal.ShowDialog();
-                
-            }
-            catch
-            {
-                throw;
-            }
         }
 
         public MainTabViewModel[] Tabs

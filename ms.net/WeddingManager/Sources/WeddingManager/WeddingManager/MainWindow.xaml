@@ -4,13 +4,6 @@
         xmlns:vms="clr-namespace:WeddingManager.ViewModels"
         xmlns:views="clr-namespace:WeddingManager.Views"
         Title="Wedding Manager" Height="350" Width="525">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Dictionaries\ResourceDictionary.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
 
     <ContentPresenter>
         <ContentPresenter.Content>

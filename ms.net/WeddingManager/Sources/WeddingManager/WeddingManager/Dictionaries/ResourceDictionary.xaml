@@ -3,11 +3,17 @@
                     xmlns:vms="clr-namespace:WeddingManager.ViewModels"
                     xmlns:views="clr-namespace:WeddingManager.Views"
                     xmlns:vmsmt="clr-namespace:WeddingManager.ViewModels.MainTabs"
-                    xmlns:viewsmt="clr-namespace:WeddingManager.Views.MainTabs">
+                    xmlns:viewsmt="clr-namespace:WeddingManager.Views.MainTabs"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     
     <!--Main Layout-->
     <DataTemplate DataType="{x:Type vms:MainLayoutViewModel}">
         <views:MainLayout />
+    </DataTemplate>
+
+    <!--Project Selector-->
+    <DataTemplate DataType="{x:Type vms:ProjectSelectorViewModel}">
+        <views:ProjectSelectorView />
     </DataTemplate>
 
     <!--Main Tabs-->
@@ -23,5 +29,7 @@
         <viewsmt:CounterpartiesView />
     </DataTemplate>
 
+    
+    <sys:Guid x:Key="EmptyGuid">00000000-0000-0000-0000-000000000000</sys:Guid>
 
 </ResourceDictionary>

@@ -72,11 +72,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\RelayCommand.cs" />
     <Compile Include="ViewModels\MainTabs\CounterpartiesViewModel.cs" />
     <Compile Include="ViewModels\MainTabs\ToastsViewModel.cs" />
     <Compile Include="ViewModels\MainTabViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MainTabs\VisitorsViewModel.cs" />
+    <Compile Include="ViewModels\ProjectSelectorViewModel.cs" />
     <Compile Include="ViewModels\WeddingManagerViewModelBase.cs" />
     <Compile Include="Views\MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
@@ -89,6 +91,9 @@
     </Compile>
     <Compile Include="Views\MainTabs\VisitorsView.xaml.cs">
       <DependentUpon>VisitorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectSelectorView.xaml.cs">
+      <DependentUpon>ProjectSelectorView.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionaries\ResourceDictionary.xaml">
       <SubType>Designer</SubType>
@@ -119,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainTabs\VisitorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProjectSelectorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -27,15 +27,16 @@ namespace VisualControls.ModalContentHandler
             InitializeComponent();
         }
 
-        public ModalDialog(IModalContent contentData, ModalButton buttons)
+        public ModalDialog(IModalContent contentData, ModalButton buttons, string windowTitle = null)
             :this()
         {
-            //if (contentData == null)
-            //    throw new ArgumentNullException("'contentData' - Can not be null");
-            
+            if (contentData == null)
+                throw new ArgumentNullException("'contentData' - Can not be null");
+
             if (buttons == ModalButton.NotDefined)
                 throw new ArgumentException("'buttons' - Buttons are not defined");
-            
+
+            this.Title = windowTitle ?? Application.Current.MainWindow.Title;
             this.DataContext = contentData;
             _buttons = buttons;
         }

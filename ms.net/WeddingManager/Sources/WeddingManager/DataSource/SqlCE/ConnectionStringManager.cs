@@ -12,7 +12,6 @@ namespace DataSource.SqlCE
 {
     public static class ConnectionStringManager
     {
-        //private static SqlCeConnection _connection;
         private static string _applicationPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         private static string _connectionString = "Data Source=" + _applicationPath + "\\SqlCE\\WeddingManagerData.sdf;Persist Security Info=False;";
 

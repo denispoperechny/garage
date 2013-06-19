@@ -17,5 +17,11 @@ namespace WeddingManager.ViewModels
             get { return _dataContext; }
         }
 
+        //TODO: Testing
+        public string Test
+        {
+            get { return "Tested"; }
+        }
+
     }
 }
